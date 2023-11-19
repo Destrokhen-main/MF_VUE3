@@ -12,5 +12,7 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     // allow Module Federation
     'import/no-unresolved': [2, { ignore: ['^header/.*$'] }],
+    'no-return-assign': 'off',
+    'vue/no-multiple-template-root': 'off',
   },
 };

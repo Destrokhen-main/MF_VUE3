@@ -14,7 +14,15 @@ import { defineComponent } from 'vue';
 
 export default defineComponent({
   data: () => ({
-    count: 0,
+    count: 10,
   }),
+  created() {
+    window.postMessage({ type: 'ss', value: this.count });
+  },
+  watch: {
+    count(n) {
+      window.postMessage({ type: 'ss', value: n });
+    },
+  },
 });
 </script>

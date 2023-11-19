@@ -1,16 +1,16 @@
 <template>
   <Header />
-  <router-view/>
+  <Layer>
+    <router-view/>
+  </Layer>
 </template>
 
-<script>
+<script setup lang="ts">
 import { defineAsyncComponent } from 'vue';
 
-export default {
-  components: {
-    Header: defineAsyncComponent(() => import('header/HeaderComponent.vue')),
-  },
-};
+import Layer from './layer/LayerView.vue';
+
+const Header = defineAsyncComponent(() => import('header/HeaderComponent.vue'));
 </script>
 
 <style>

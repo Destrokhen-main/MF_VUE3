@@ -1,0 +1,7 @@
+{
+  "name": "mf",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "pnpm --filter mf_* --parallel serve"
+  }
+}

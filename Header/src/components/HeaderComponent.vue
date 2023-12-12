@@ -2,7 +2,7 @@
   <div class="header">
     <div class="logo">
       HEADER SITE (frontEnd 2) <br />
-      Эту переменную я отображаю из блока ниже {{count}}
+      Эту переменную я отображаю из блока ниже {{ $store.getters['getCount'] }}
     </div>
 
     <nav class="nav">
@@ -15,9 +15,6 @@
 <script>
 export default {
   name: 'HeaderComponent',
-  computed: {
-    count: (vm) => vm.$store.state.count,
-  },
 };
 </script>
 

@@ -4,7 +4,11 @@ export default createStore({
   state: {
     count: 1,
   },
-  getters: {},
+  getters: {
+    getCount(state) {
+      return state.count;
+    },
+  },
   mutations: {},
   actions: {
     addOne({ state }) {

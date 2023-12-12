@@ -2,7 +2,7 @@
   <div class="content">
     front end - 1
     <div>
-      <span>{{ count }}</span>
+      <span>{{ store.getters.getCount }}</span>
       <button @click="click">+</button>
     </div>
   </div>
@@ -10,17 +10,18 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import { useStore } from 'vuex';
 
 export default defineComponent({
-  computed: {
-    count(vm: any) {
-      return vm.$store.state.count;
-    },
-  },
-  methods: {
-    click() {
-      (this as any).$store.dispatch('addOne');
-    },
+  setup() {
+    const store = useStore();
+
+    const click = () => store.dispatch('addOne');
+
+    return {
+      click,
+      store,
+    };
   },
 });
 </script>

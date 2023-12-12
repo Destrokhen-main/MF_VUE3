@@ -25,6 +25,9 @@ module.exports = defineConfig({
           'vue-router': {
             singleton: true,
           },
+          'core-js': {
+            singleton: true,
+          },
         },
       }),
     ],

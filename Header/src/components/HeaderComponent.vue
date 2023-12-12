@@ -15,15 +15,8 @@
 <script>
 export default {
   name: 'HeaderComponent',
-  data: () => ({
-    count: 0,
-  }),
-  created() {
-    window.addEventListener('message', (e) => {
-      if (e.data.type === 'ss') {
-        this.count = e.data.value;
-      }
-    });
+  computed: {
+    count: (vm) => vm.$store.state.count,
   },
 };
 </script>

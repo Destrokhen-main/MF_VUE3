@@ -14,5 +14,6 @@ module.exports = {
     'import/no-unresolved': [2, { ignore: ['^header/.*$'] }],
     'no-return-assign': 'off',
     'vue/no-multiple-template-root': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
   },
 };

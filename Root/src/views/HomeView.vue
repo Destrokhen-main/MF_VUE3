@@ -2,9 +2,8 @@
   <div class="content">
     front end - 1
     <div>
-      <button @click="count -= 1">-</button>
       <span>{{ count }}</span>
-      <button @click="count += 1">+</button>
+      <button @click="click">+</button>
     </div>
   </div>
 </template>
@@ -13,15 +12,14 @@
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  data: () => ({
-    count: 10,
-  }),
-  created() {
-    window.postMessage({ type: 'ss', value: this.count });
+  computed: {
+    count(vm: any) {
+      return vm.$store.state.count;
+    },
   },
-  watch: {
-    count(n) {
-      window.postMessage({ type: 'ss', value: n });
+  methods: {
+    click() {
+      (this as any).$store.dispatch('addOne');
     },
   },
 });

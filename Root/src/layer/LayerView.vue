@@ -10,6 +10,8 @@
 .container {
   display: flex;
   justify-content: center;
+  margin: 10px 0;
+  height: 50%;
 }
 
 .wrapper {

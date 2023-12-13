@@ -7,14 +7,34 @@ module.exports = defineConfig({
       entry: './src/index.ts',
     },
   },
+  publicPath: 'auto',
   configureWebpack: {
+    optimization: {
+      splitChunks: {
+        cacheGroups: {
+          defaultVendors: {
+            name: 'chunk-vendors',
+            test: /[\\/]node_modules[\\/]/,
+            priority: -10,
+            chunks: 'async',
+            reuseExistingChunk: true,
+          },
+          common: {
+            name: 'chunk-common',
+            minChunks: 2,
+            priority: -20,
+            chunks: 'async',
+            reuseExistingChunk: true,
+          },
+        },
+      },
+    },
     plugins: [
       new webpack.container.ModuleFederationPlugin({
-        name: 'root',
+        name: 'footer',
         filename: 'remoteEntry.js',
-        remotes: {
-          header: 'header@http://localhost:8082/remoteEntry.js',
-          footer: 'footer@http://localhost:8083/remoteEntry.js',
+        exposes: {
+          './FooterComponent.vue': './src/components/FooterComponent.vue',
         },
         shared: {
           vue: {

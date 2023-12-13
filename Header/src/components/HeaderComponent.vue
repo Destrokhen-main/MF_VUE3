@@ -1,8 +1,7 @@
 <template>
   <div class="header">
     <div class="logo">
-      HEADER SITE (frontEnd 2) <br />
-      Эту переменную я отображаю из блока ниже {{ $store.getters['getCount'] }}
+      LOGO {{ $store.getters['getCount'] }}
     </div>
 
     <nav class="nav">

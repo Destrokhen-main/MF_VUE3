@@ -14,6 +14,9 @@ export default createStore({
     addOne({ state }) {
       state.count += 1;
     },
+    minusOne({ state }) {
+      state.count -= 1;
+    },
   },
   modules: {},
 });

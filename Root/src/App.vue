@@ -3,6 +3,7 @@
   <Layer>
     <router-view/>
   </Layer>
+  <Footer />
 </template>
 
 <script setup lang="ts">
@@ -17,7 +18,14 @@ const Header = defineAsyncComponent({
   loadingComponent: Loader,
   errorComponent: Error,
   timeout: 3000,
-  suspensible: true,
+});
+
+const Footer = defineAsyncComponent({
+  // eslint-disable-next-line import/no-unresolved
+  loader: () => import('footer/FooterComponent.vue'),
+  loadingComponent: Loader,
+  errorComponent: Error,
+  timeout: 3000,
 });
 </script>
 
@@ -25,5 +33,9 @@ const Header = defineAsyncComponent({
 * {
   padding: 0;
   margin: 0;
+}
+
+#app {
+  height: 100vh;
 }
 </style>

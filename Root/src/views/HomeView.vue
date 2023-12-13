@@ -1,10 +1,8 @@
 <template>
   <div class="content">
-    front end - 1
-    <div>
-      <span>{{ store.getters.getCount }}</span>
-      <button @click="click">+</button>
-    </div>
+    <button @click="store.dispatch('minusOne')" class="btn" >-</button>
+    <span class="count">{{ store.getters.getCount }}</span>
+    <button @click="click" class="btn">+</button>
   </div>
 </template>
 
@@ -25,3 +23,21 @@ export default defineComponent({
   },
 });
 </script>
+
+<style scoped>
+.content {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.btn {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.count {
+  width: 30px;
+  text-align: center;
+}
+</style>

@@ -4,6 +4,3 @@ declare module '*.vue' {
   const component: DefineComponent<{}, {}, any>;
   export default component;
 }
-
-declare module "header/HeaderComponent.vue";
-declare module "footer/FooterComponent.vue";
